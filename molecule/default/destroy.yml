@@ -8,7 +8,9 @@
     - name: Destroy molecule instance(s)
       docker_container:
         name: "{{ item.name }}"
-        docker_host: "{{ item.docker_host | default('unix://var/run/docker.sock') }}"
+        # Not specifying 'docker_host' will let DOCKER_HOST variable being used with a fallback to 'unix://var/run/docker.sock' by default
+        # (cf. https://docs.ansible.com/ansible/latest/modules/docker_container_module.html)
+        # docker_host: "{{ item.docker_host | default('unix://var/run/docker.sock') }}"
         state: absent
         force_kill: "{{ item.force_kill | default(true) }}"
       register: server
