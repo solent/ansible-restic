@@ -19,6 +19,7 @@ restic_repos: []
 #   remote_credentials:
 #     aws_access_key_id: "AWS_ACCESS_KEY_ID"
 #     aws_secret_access_key: "AWS_SECRET_ACCESS_KEY"
+#   mailto: "backup@domain.tld"
 #   jobs:
 #     - command: 'restic backup /srv'
 #       at: '0 1  * * *'

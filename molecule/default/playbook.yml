@@ -11,6 +11,7 @@
       - name: local-example
         url: "/tmp/restic"
         password: "correcthorsebatterystaple"
+        mailto: "backup.molecule.default@domain.tld"
         jobs:
           - command: 'restic backup /srv'
             at: '0 1  * * *'

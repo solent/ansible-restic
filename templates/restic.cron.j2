@@ -3,6 +3,9 @@
 # {{ ansible_managed }}
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:{{ restic_install_path }} 
+{% if item.mailto is defined %}
+MAILTO={{ item.mailto | trim }}
+{% endif %}
 export RESTIC_REPOSITORY={{ item.url | trim | quote }}
 export RESTIC_PASSWORD={{ item.password | trim | quote }}
 {% if item.remote_credentials is defined %}

@@ -22,6 +22,7 @@ def test_cronfiles(host):
         assert f.is_file
         assert f.mode == 0o640
         assert f.contains('export RESTIC_PASSWORD=correcthorsebatterystaple')
+        assert f.contains('MAILTO=backup.molecule.default@domain.tld')
 #
 #
 # def test_logdir(host):
