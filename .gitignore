@@ -7,6 +7,8 @@
 *.swp
 *.swo
 *.idea
+.env
+.vscode
 .molecule
 .cache
 **__pycache__**
