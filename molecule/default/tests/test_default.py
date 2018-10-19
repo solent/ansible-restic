@@ -21,7 +21,7 @@ def test_cronfiles(host):
         assert f.exists
         assert f.is_file
         assert f.mode == 0o640
-        # assert f.contains('RESTIC_PASSWORD="correcthorsebatterystaple"')
+        assert f.contains('export RESTIC_PASSWORD=correcthorsebatterystaple')
 #
 #
 # def test_logdir(host):
